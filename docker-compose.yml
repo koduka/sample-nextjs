@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    build: ./docker
+    tty: true
+    volumes:
+      - ./web:/web
+    working_dir: /web
+    ports:
+      - 3000:3000
+    networks:
+      - defaults
+
+networks:
+  defaults:
