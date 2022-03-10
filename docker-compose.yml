@@ -9,6 +9,8 @@ services:
     working_dir: /web
     ports:
       - 3000:3000
+    environment:
+      - WEB_BASE_URL=http://web:3000
     networks:
       - defaults
 
