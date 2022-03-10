@@ -1,14 +1,21 @@
-import { ThemeProvider, useTheme, responsiveFontSizes, createTheme } from '@mui/material'
-import type { AppProps } from 'next/app'
-import '../styles/globals.css'
+import { createTheme, ThemeProvider } from '@mui/material';
+import type { AppProps } from 'next/app';
+import '../styles/globals.css';
 
 function App({ Component, pageProps }: AppProps) {
-  const theme = responsiveFontSizes(createTheme())
+
+  let theme = createTheme();
+
+  theme = createTheme({
+    typography: {
+      fontSize: 10,
+    }
+  })
 
   return (
     <ThemeProvider theme={theme}>
       <Component {...pageProps} />
-    </ThemeProvider>
+    </ThemeProvider >
   )
 }
 
